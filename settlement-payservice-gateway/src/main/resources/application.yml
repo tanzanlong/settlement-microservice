@@ -1,0 +1,12 @@
+zuul:
+  routes:
+    users:
+      path: /users/**
+      url: http://localhost:8085/proxy/
+
+ribbon:
+  eureka:
+    enabled: false
+
+server:
+  port: 8085

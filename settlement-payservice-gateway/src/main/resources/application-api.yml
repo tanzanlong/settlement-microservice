@@ -1,0 +1,26 @@
+server:
+
+  port: 8040
+
+spring:
+  application:
+    name: microservice-gateway-zuul
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone:http://nicky:123abcABC@localhost:8761/eureka
+  instance:
+    ip-address: true
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    microservice-provider-user: /ecom/**
+
+zuul:
+ ignoredServices: '*' 
+ routes:
+    

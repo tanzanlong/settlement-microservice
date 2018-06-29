@@ -16,6 +16,7 @@
     <module>settlement-consumer-account-ribbon</module>
     <module>settlement-provider-user</module>
     <module>settlement-consumer-account-ribbon-hystrix</module>
+    <module>settlement-payservice-gateway</module>
     <!-- <module>microservice-provider-user</module>
     <module>microservice-consumer-movie-ribbon</module>
     <module>microservice-consumer-movie-feign</module>
