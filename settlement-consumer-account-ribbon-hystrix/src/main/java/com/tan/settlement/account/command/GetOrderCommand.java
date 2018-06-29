@@ -1,16 +1,16 @@
 package com.tan.settlement.account.command;
 
-import java.util.List;
-
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import com.netflix.hystrix.HystrixCommandKey;
 import com.netflix.hystrix.HystrixCommandProperties;
 import com.netflix.hystrix.HystrixThreadPoolKey;
 import com.netflix.hystrix.HystrixThreadPoolProperties;
+import com.tan.settlement.account.entity.User;
+import com.tan.settlement.account.service.RibbonHystrixService;
 
-public class GetOrderCommand extends HystrixCommand<List>{
-    OrderService orderService;
+public class GetOrderCommand extends HystrixCommand<User>{
+    RibbonHystrixService ribbonHystrixService;
 
     public GetOrderCommand(String name){
         super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ThreadPoolTestGroup"))
@@ -29,7 +29,7 @@ public class GetOrderCommand extends HystrixCommand<List>{
     }
 
     @Override
-    protected List run() throws Exception {
-        return orderService.getOrderList();
+    protected User run() throws Exception {
+        return ribbonHystrixService.findById(123L);
     }
 }
